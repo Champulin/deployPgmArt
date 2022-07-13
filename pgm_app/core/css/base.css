@@ -1,0 +1,8 @@
+.socials email-container i{
+    position: relative;
+}
+.socials-container{
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}

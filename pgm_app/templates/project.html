@@ -1,0 +1,94 @@
+{% extends "base.html"%}
+{% load static %}
+{% block styles %}
+<link href="{% static 'core/css/project_detail.css'%}"  rel="stylesheet" />
+{% endblock styles%}
+{% block content %}
+<main>
+    <section class="content"> 
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="project-detail">
+                        <div class="project-detail-header">
+                            <h1>{{project.title}}</h1>
+                        </div>
+                        <div class="project-detail-body">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="project-detail-body-left">
+                                        <div class="project-detail-body-left-image">
+                                            <img src="{{project.image.url}}" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="project-detail-body-right">
+                                        <div class="project-detail-body-right-content">
+                                            <p>{{project.description}}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- VIDEO CONTAINER --> 
+      {% if project.source.name != 'none' %} 
+      <section class="video-container {{project.source}}">
+        <section id="video-player"></section>
+        </section>
+      </section>
+      {%endif%}
+      <!-- IMAGE CONTAINER -->
+      <section class="row row-cols-1 row-cols-md-3 g-4" id="item-container">
+        {% for i in project.imagemodel_set.all %}
+        <img src="{{i.image.url}}" alt="">
+        {% endfor %}
+      </section>
+      <br />
+    </section>
+</main>
+{% endblock content%}
+{% block scripts %}
+<script>
+    const url = "{{ project.video_url }}";
+  </script>
+  {% if project.source.name == "youtube" %}
+  <script>
+    var tag = document.createElement('script');
+    tag.src = "https://www.youtube.com/iframe_api";
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+    function getYoutubeId(url){
+      const regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#&?]*).*/;
+      const match = url.match(regExp);
+      return (match&&match[7].length==11)? match[7] : false;
+    }
+    const id = getYoutubeId(url);
+    var player;
+    function onYouTubeIframeAPIReady() {
+      player = new YT.Player('video-player', {
+        height: '100%',
+        width: '100%',
+        videoId: id,
+        playerVars: { 'modestbranding': 1, 'rel': 0, 'controls': 1 },
+      });
+    }
+  </script>
+  {% endif %}
+  
+  {% if project.source.name == "vimeo" %}
+  <script src="https://player.vimeo.com/api/player.js"></script>
+  <script>
+    const player = new Vimeo.Player('video-player', {
+      url: url,
+      responsive: true,
+    });
+  
+    player.on('play', function() {});
+    </script>
+    {% endif %}
+{% endblock scripts %}
