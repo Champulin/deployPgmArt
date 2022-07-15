@@ -2,21 +2,20 @@
 <link href="{% static 'core/css/index.css'%}" rel="stylesheet" />
 {% endblock styles%} {% block content %}
 <main>
-  <header>
-    
+  <header id="home">
     <!-- Background image -->
     <div
-    id="hero-bg"
+      id="hero-bg"
       class="p-5 text-center bg-image"
-      style="
-      background-image: url({% static 'core/img/home.jpg' %});
-      "
+      style="background-image: url({%static'core/img/home.jpg'%})"
     >
       <div class="mask" style="background-color: rgba(0, 0, 0, 0.6)">
         <div class="d-flex justify-content-center align-items-center h-100">
           <div class="text-white">
             <h1 class="mb-3">PALOMA GORDIÁN MONTALVA</h1>
-            <h4 class="mb-3">CRÉATION - ARTS VIVANTS - PROGRAMMATION - DÉVELOPPEMENT DE PROJETS</h4>
+            <h4 class="mb-3">
+              CRÉATION - ARTS VIVANTS - PROGRAMMATION - DÉVELOPPEMENT DE PROJETS
+            </h4>
           </div>
         </div>
       </div>
@@ -74,7 +73,7 @@
       <div class="btn-toolbar" role="toolbar" id="myBtnContainer">
         <button
           type="button"
-          class="btn btn-outline-primary  btn-rounded active"
+          class="btn btn-outline-primary btn-rounded active"
           onclick="filterSelection('all')"
         >
           Montrer Tout
@@ -82,7 +81,7 @@
         {% for category in category_list %}
         <button
           type="button"
-          class="btn btn-outline-secondary btn-rounded "
+          class="btn btn-outline-secondary btn-rounded"
           data-mdb-ripple-color="dark"
           onclick="filterSelection('{{category.name}}')"
         >
