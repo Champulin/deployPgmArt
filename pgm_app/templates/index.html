@@ -1,81 +1,117 @@
-{% extends "base.html"%}
-{% load static %}
-{% block styles %}
-<link href="{% static 'core/css/index.css'%}"  rel="stylesheet" />
-{% endblock styles%}
-{% block content %}
+{% extends "base.html"%} {% load static %} {% block styles %}
+<link href="{% static 'core/css/index.css'%}" rel="stylesheet" />
+{% endblock styles%} {% block content %}
 <main>
-    <header class='handler-one' id="home">
-    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-            <h1>Paloma Gordián Montalva</h1>
-            <span>CULTURA EN MOVIMIENTO - PROGRAMACION - CREACION - DESARROLLO DE PROYECTOS - TEATRO </span>
-                <div  id="foto-carolusel">
-                  <img src="{% static 'core/img/puerto_viejo.jpg' %}" class="d-block w-100" alt="...">
-                </div>
+  <header>
+    
+    <!-- Background image -->
+    <div
+    id="hero-bg"
+      class="p-5 text-center bg-image"
+      style="
+      background-image: url({% static 'core/img/home.jpg' %});
+      "
+    >
+      <div class="mask" style="background-color: rgba(0, 0, 0, 0.6)">
+        <div class="d-flex justify-content-center align-items-center h-100">
+          <div class="text-white">
+            <h1 class="mb-3">PALOMA GORDIÁN MONTALVA</h1>
+            <h4 class="mb-3">CRÉATION - ARTS VIVANTS - PROGRAMMATION - DÉVELOPPEMENT DE PROJETS</h4>
+          </div>
+        </div>
       </div>
-    </header>
-        <!-- About-->
-        <section class="about-section text-center" id="about">
-            <div class="container px-4 px-lg-5">
-                <div class="row gx-4 gx-lg-5 justify-content-center">
-                    <div class="col-lg-8">
-                        <h2 class="text-white mb-4">Acerca de mi</h2>
-                        <div class="hero-pic">
-                            <img src="{% static 'core/img/foto4.jpg' %}" class="img-fluid" alt="">
-                        </div>
-                        <p>
-                            Mi nombre es Paloma Gordián Montalva, soy comunicadora audiovisual de la Universidad de las
-                            artes y ciencias de la comunicacion (UNIACC) Santiago de Chile, 2001. <br><br>
-                            Desde los inicios de mi carrera mis intereses se han enfocado en la creacion y gestion de proyectos culturales,
-                            perfeccionandome en la dirección de equipos, produccion de cartelera, venta y busqueda de
-                            recursos, marketing, comunicaciones y relaciones con clientes.<br><br>
-                            En mi experiencia como comunicadora audiovisual, mi paso por la television y el teatro han sido fundamentales
-                            para comprender la relacion entre producto, contenido y espectador, desempeñandome
-                            exitosamente en las areas de marketing de los principales canales de televisión chilenos,
-                            desarrollando imágenes corporativas, spots publicitarios, campañas políticas, programacion infantil
-                            y series animadas, derivando mas tarde al teatro como productora general de importantes compañias teatrales chilenas y proyectos
-                            culturales con uso de recursos multimediales.<br><br>
-                            La relacion de mi trabajo de gestion cultural con la creacion de obras, me ha llevado a participar
-                            del trabajo creativo activamente, proponiendo y experimentando con otros medios y formatos,
-                            como la tecnologia y las artes visuales.</p>
-                    </div>
-                </div>
+    </div>
+    <!-- Background image -->
+  </header>
+  <!-- About-->
+  <section class="text-center" id="about">
+    <div class="px-4 px-lg-5">
+      <div class="row gx-4 gx-lg-5 justify-content-center">
+        <div class="col-lg-8">
+          <h2 class="text-white mb-4">À propos de moi</h2>
+          <div class="hero-pic">
+            <img
+              src="{% static 'core/img/about_pic.jpg' %}"
+              class="img-fluid"
+              alt=""
+            />
+          </div>
+          <p>
+            Mi nombre es Paloma Gordián Montalva, soy comunicadora audiovisual
+            de la Universidad de las artes y ciencias de la comunicacion
+            (UNIACC) Santiago de Chile, 2001. <br /><br />
+            Desde los inicios de mi carrera mis intereses se han enfocado en la
+            creacion y gestion de proyectos culturales, perfeccionandome en la
+            dirección de equipos, produccion de cartelera, venta y busqueda de
+            recursos, marketing, comunicaciones y relaciones con clientes.<br /><br />
+            En mi experiencia como comunicadora audiovisual, mi paso por la
+            television y el teatro han sido fundamentales para comprender la
+            relacion entre producto, contenido y espectador, desempeñandome
+            exitosamente en las areas de marketing de los principales canales de
+            televisión chilenos, desarrollando imágenes corporativas, spots
+            publicitarios, campañas políticas, programacion infantil y series
+            animadas, derivando mas tarde al teatro como productora general de
+            importantes compañias teatrales chilenas y proyectos culturales con
+            uso de recursos multimediales.<br /><br />
+            La relacion de mi trabajo de gestion cultural con la creacion de
+            obras, me ha llevado a participar del trabajo creativo activamente,
+            proponiendo y experimentando con otros medios y formatos, como la
+            tecnologia y las artes visuales.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Projects -->
+  <section class="portfolio-section" id="portfolio">
+    <h1>Portafolio</h1>
+    <!-- Control buttons -->
+    <div
+      class="btn-group btn-group-sm me-2"
+      role="group"
+      aria-label="First group"
+    >
+      <div class="btn-toolbar" role="toolbar" id="myBtnContainer">
+        <button
+          type="button"
+          class="btn btn-outline-primary  btn-rounded active"
+          onclick="filterSelection('all')"
+        >
+          Montrer Tout
+        </button>
+        {% for category in category_list %}
+        <button
+          type="button"
+          class="btn btn-outline-secondary btn-rounded "
+          data-mdb-ripple-color="dark"
+          onclick="filterSelection('{{category.name}}')"
+        >
+          {{category.name}}
+        </button>
+        {% endfor %}
+      </div>
+    </div>
+    <div class="row row-cols-1 row-cols-md-3 g-4" id="item-container">
+      {% for project in projects_list %}
+      <div class="col filterDiv {{project.category.name}}">
+        <div class="card h-100">
+          <a href="{% url 'pgm_app:project' slug=project.slug %}">
+            <img src="{{project.image.url}}" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">{{project.title}}</h5>
             </div>
-        </section>
-                <!-- Projects -->
-        <section class="portfolio-section" id="portfolio">
-            <h1 >Portafolio</h1>
-            <!-- Control buttons -->
-            <div class="btn-group btn-group-sm me-2" role="group" aria-label="First group" >
-                <div class="btn-toolbar" role="toolbar" id="myBtnContainer">
-                    <button type="button"class="btn btn-outline-primary active" onclick="filterSelection('all')"> Montrer Tout</button>
-                    {% for category in category_list %}
-                    <button type="button"class="btn btn-outline-primary" onclick="filterSelection('{{category.name}}')"> {{category.name}}</button>
-                    {% endfor %}
-                </div>
-            </div>
-            <div class="row row-cols-1 row-cols-md-3 g-4" id="item-container">
-                {% for project in projects_list %}
-                <div class="col filterDiv {{project.category.name}}">
-                  <div class="card h-100">
-                    <a href="{% url 'pgm_app:project' slug=project.slug %}">
-                    <img src="{{project.image.url}}" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">{{project.title}}</h5>
-                    </div>
-                    </a>
-                    <p class="card-text">{{project.tags}}</p>
-                  </div>
-                </div>
-                {% endfor %}
-            </div>
-        </section>
-                <!-- News Articles -->
-                <section class="news-section" id="news">
-                <h1>Prensa</h1>
-                </section>
-    </main>
-    {% endblock content%}
-    {% block scripts %} 
-    <script src="{% static 'core/js/index.js' %}"></script >
-    {% endblock scripts%}
+          </a>
+          <p class="card-text">{{project.tags}}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+  <!-- News Articles -->
+  <section class="news-section" id="news">
+    <h1>Prensa</h1>
+  </section>
+</main>
+{% endblock content%} {% block scripts %}
+<script src="{% static 'core/js/index.js' %}"></script>
+{% endblock scripts%}

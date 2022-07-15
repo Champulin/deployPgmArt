@@ -1,5 +1,14 @@
-.hero-pic{
-    aspect-ratio: 4/3;
+/* <!-- Intro settings --> */
+/* Default height for small devices */
+#hero-bg {
+  height: 400px;
+}
+
+/* Height for devices larger than 992px */
+@media (min-width: 992px) {
+  #hero-bg  {
+    height: 700px;
+  }
 }
 
 h1{
@@ -14,38 +23,16 @@ h1{
 z-index: 2;
 }
 
-
+#about{
+    background-color: #0a0303;
+}
 
 #about p{
     white-space: normal;
     color:aliceblue;
     text-align: justify;
 }
-#foto-carousel{
-    aspect-ratio: 16/9;
-    height: 400px;
-}
-.handler-one h1{
-    top:40%;
-    z-index: 1;
-    left:25%;
-    position:absolute;
-    color: black;
-    font-weight: 1000;
-    font-size: 3rem;
-}
-.handler-one span{
-    top:60%;
-    z-index: 1;
-    left:15%;
-    position:absolute;
-    color:aliceblue;
-    max-width: 100%;
-}
-.about-section{
-  padding-top: 1rem;
-}
-  
+
   .filterDiv {
     float: left;
     color: rgb(11, 15, 19);
@@ -77,16 +64,13 @@ z-index: 2;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 2rem;
   }
   
   .btn-toolbar{
     font-size: 1.9vw;
   } 
-  .btn{
-    padding:13px;
-    border-radius:1px;
-    border-color: black;
+  .btn-group, .btn-group-vertical{
+    box-shadow: none;
   }
   .contact-section .container{
     display: flex;
@@ -103,14 +87,7 @@ z-index: 2;
       grid-template-columns: 1fr;
       gap: 0rem;
     }
-    .handler-one h1{
-      font-size: 2rem;
-      top: 16%;
-      left: 9%;
-    }
-    .handler-one span{
-      font-size: 1.3vw;
-    }
+
     #about p{
       font-size: 2.3vw;
     }
