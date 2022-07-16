@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-ydwwj37kbvcw90bbskq%-asc9a4vpe)yqcqz^(efm1p$6pczae'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['pgm-artproduction.com','159.223.3.207','localhost']
+ALLOWED_HOSTS = ['www.pgm-artproduction.com','pgm-artproduction.com','159.223.3.207','localhost']
 
 
 # Application definition
