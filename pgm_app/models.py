@@ -3,7 +3,7 @@ from django.db import models
 class Project(models.Model):
     # Fields
     title = models.CharField(max_length=100, help_text="Titulo del Proyecto", verbose_name="Titulo")
-    subtitle = models.CharField(max_length=100, help_text="Subtitulo", verbose_name="Tags")
+    subtitle = models.CharField(max_length=100, help_text="Subtitulo", verbose_name="Subtitulo")
     image = models.ImageField(upload_to='media/images',blank=True, help_text="Imagen del Proyecto", verbose_name="Imagen")
     slug = models.SlugField(max_length=100, help_text="Slug del Proyecto", verbose_name="Slug")
     description = models.TextField(help_text="Descripcion del Proyecto", verbose_name="Descripcion")
