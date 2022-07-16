@@ -10,7 +10,7 @@ class Project(models.Model):
     date = models.DateField()
     video_url = models.CharField(max_length=200, blank=True,help_text='Url del video ', verbose_name='Video URL')
     source = models.ForeignKey('Source', on_delete=models.CASCADE,blank=True, help_text='Youtube ou Vimeo',verbose_name='Source')
-    category = models.ForeignKey('Category', on_delete=models.SET_NULL, null=True, help_text='choisi la catégorie du video', verbose_name='Catégorie')
+    category = models.ForeignKey('Category', on_delete=models.SET_NULL, null=True, help_text='choisi la catégorie du video', verbose_name='Categoria')
     # Metadata
     class Meta:
         ordering = ['-date','title']
