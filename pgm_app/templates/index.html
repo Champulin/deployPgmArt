@@ -1,13 +1,13 @@
 {% extends "base.html"%} {% load static %} {% block styles %}
-<link href="{% static 'core/css/index.css'%}" rel="stylesheet" />
-{% endblock styles%} {% block content %}
-<main >
-  <header >
+<link href="{% static 'core/css/index.css' %}" rel="stylesheet" />
+{% endblock styles %} {% block content %}
+<main>
+  <header>
     <!-- Background image -->
     <div
       id="hero-bg"
       class="p-5 text-center bg-image"
-      style="background-image: url({%static'core/img/home.jpg'%});"
+      style="background-image: url({% static 'core/img/home.jpg' %})"
     >
       <div class="mask" style="background-color: rgba(0, 0, 0, 0.6)">
         <div class="d-flex justify-content-center align-items-center h-100">
@@ -111,6 +111,6 @@
     <h1>Presse</h1>
   </section>
 </main>
-{% endblock content%} {% block scripts %}
+{% endblock content %} {% block scripts %}
 <script src="{% static 'core/js/index.js' %}"></script>
-{% endblock scripts%}
+{% endblock scripts %}
