@@ -18,7 +18,7 @@ class CategoryAdmin(admin.ModelAdmin):
     pass
     list_display = ('name', 'id')
     search_fields = ('name',)
-    ordering=['id']
+    ordering=['-id']
     fieldsets = (
         (None, {
             'fields': ('name','slug')
