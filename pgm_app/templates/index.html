@@ -60,16 +60,14 @@
   <section class="portfolio-section" id="portfolio">
     <h1>Portefeuille</h1>
     <!-- Control buttons -->
-    <div class="btn-group">
-      <input type="radio" class="btn-check" onclick="filterSelection('all')"name="options" id="option-1" autocomplete="off" checked />
-      <label class="btn btn-primary" for="option-1">Montrer Tout</label>
+    <div class="btn-toolbar btn-toolbar-sm flex-wrap" role="toolbar" aria-label="Basic example" id="myBtnContainer">
+      <button type="button" class="btn btn-outline-primary" onclick="filterSelection('all')" checked>Montrer
+        Tout</button>
       {% for category in category_list %}
-      <input type="radio" class="btn-check" name="options" id="option{{category.id}}" autocomplete="off" />
-      <label class="btn btn-primary" for="option{{category.id}}"onclick="filterSelection('{{category.id}}')">
-        {{category.name}}</label>
+      <button type="button" class="btn btn-outline-primary" onclick="filterSelection('{{category.id}}')">
+        {{category.name}}</button>
       {% endfor %}
     </div>
-
     <div class="row row-cols-1 row-cols-md-3 g-4" id="item-container">
       {% for project in projects_list %}
       <div class="col filterDiv {{project.category.id}}">
@@ -97,8 +95,7 @@
           allowfullscreen></iframe>
       </div>
       <div class="item ratio ratio-16x9">
-        <iframe src="https://www.youtube.com/embed/eQqWB3rWgDY" title="Presse TV"
-          frameborder="0"
+        <iframe src="https://www.youtube.com/embed/eQqWB3rWgDY" title="Presse TV" frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen></iframe>
       </div>
