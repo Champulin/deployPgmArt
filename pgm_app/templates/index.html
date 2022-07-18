@@ -65,14 +65,14 @@
       <label class="btn btn-primary" for="option-1">Montrer Tout</label>
       {% for category in category_list %}
       <input type="radio" class="btn-check" name="options" id="option{{category.id}}" autocomplete="off" />
-      <label class="btn btn-primary" for="option{{category.id}}"onclick="filterSelection('{{category.name}}')">
+      <label class="btn btn-primary" for="option{{category.id}}"onclick="filterSelection('{{category.id}}')">
         {{category.name}}</label>
       {% endfor %}
     </div>
 
     <div class="row row-cols-1 row-cols-md-3 g-4" id="item-container">
       {% for project in projects_list %}
-      <div class="col filterDiv {{project.category.name}}">
+      <div class="col filterDiv {{project.category.id}}">
         <div class="card h-100">
           <a href="{% url 'pgm_app:project' slug=project.slug %}">
             <img src="{{project.image.url}}" class="card-img-top" alt="..." />
