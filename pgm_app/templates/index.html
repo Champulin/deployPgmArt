@@ -4,11 +4,7 @@
 <main>
   <header>
     <!-- Background image -->
-    <div
-      id="hero-bg"
-      class="p-5 text-center bg-image"
-      style="background-image: url({% static 'core/img/home.jpg' %})"
-    >
+    <div id="hero-bg" class="p-5 text-center bg-image" style="background-image: url({% static 'core/img/home.jpg' %});">
       <div class="mask" style="background-color: rgba(0, 0, 0, 0.6)">
         <div class="d-flex justify-content-center align-items-center h-100">
           <div class="text-white">
@@ -27,35 +23,34 @@
     <div class="px-4 px-lg-5">
       <div class="row gx-4 gx-lg-5 justify-content-center">
         <div class="col-lg-8">
+          <br />
           <h2 class="text-white mb-4">À propos de moi</h2>
           <div class="hero-pic">
-            <img
-              src="{% static 'core/img/about_pic.jpg' %}"
-              class="img-fluid"
-              alt=""
-            />
+            <img src="{% static 'core/img/about_pic.jpg' %}" class="img-fluid" alt="" />
           </div>
           <p>
-            Mi nombre es Paloma Gordián Montalva, soy comunicadora audiovisual
-            de la Universidad de las artes y ciencias de la comunicacion
-            (UNIACC) Santiago de Chile, 2001. <br /><br />
-            Desde los inicios de mi carrera mis intereses se han enfocado en la
-            creacion y gestion de proyectos culturales, perfeccionandome en la
-            dirección de equipos, produccion de cartelera, venta y busqueda de
-            recursos, marketing, comunicaciones y relaciones con clientes.<br /><br />
-            En mi experiencia como comunicadora audiovisual, mi paso por la
-            television y el teatro han sido fundamentales para comprender la
-            relacion entre producto, contenido y espectador, desempeñandome
-            exitosamente en las areas de marketing de los principales canales de
-            televisión chilenos, desarrollando imágenes corporativas, spots
-            publicitarios, campañas políticas, programacion infantil y series
-            animadas, derivando mas tarde al teatro como productora general de
-            importantes compañias teatrales chilenas y proyectos culturales con
-            uso de recursos multimediales.<br /><br />
-            La relacion de mi trabajo de gestion cultural con la creacion de
-            obras, me ha llevado a participar del trabajo creativo activamente,
-            proponiendo y experimentando con otros medios y formatos, como la
-            tecnologia y las artes visuales.
+            Je m'appelle Paloma Gordián Montalva, je suis communicatrice
+            audiovisuelle de l'Université des Arts et Sciences de la
+            Communication (UNIACC) Santiago du Chili, 2001.
+            <br /><br />
+            Depuis le début de ma carrière, mes intérêts se sont concentrés sur
+            la création et la gestion de projets culturels, Perfectionnement
+            moi-même dans la gestion d'équipe, la production d'affichage, la
+            vente et la recherche de ressources, le marketing, la communication
+            et la relation client. Dans mon expérience de communicant
+            audiovisuel, mon passage à la télévision et au théâtre a été
+            essentiel pour comprendre la relation entre produit, contenu et
+            spectateur, travaillant avec succès dans les domaines marketing des
+            principales chaînes de télévision chiliennes, développant des images
+            d'entreprise, des spots publicitaires , campagnes politiques ,
+            programmes pour enfants et séries animées, puis a dérivé vers le
+            théâtre en tant que producteur général pour d'importantes compagnies
+            théâtrales chiliennes et des projets culturels utilisant des
+            ressources multimédias.
+            <br /><br />La relation entre mon travail de gestion culturelle et
+            la création d'œuvres m'a amené à participer activement au travail de
+            création, proposant et expérimentant d'autres médias et formats,
+            tels que la technologie et les arts visuels.
           </p>
         </div>
       </div>
@@ -65,31 +60,16 @@
   <section class="portfolio-section" id="portfolio">
     <h1>Portefeuille</h1>
     <!-- Control buttons -->
-    <div
-      class="btn-group btn-group-sm me-2"
-      role="group"
-      aria-label="First group"
-    >
-      <div class="btn-toolbar" role="toolbar" id="myBtnContainer">
-        <button
-          type="button"
-          class="btn btn-outline-primary btn-rounded active"
-          onclick="filterSelection('all')"
-        >
-          Montrer Tout
-        </button>
-        {% for category in category_list %}
-        <button
-          type="button"
-          class="btn btn-outline-secondary btn-rounded"
-          data-mdb-ripple-color="dark"
-          onclick="filterSelection('{{category.name}}')"
-        >
-          {{category.name}}
-        </button>
-        {% endfor %}
-      </div>
+    <div class="btn-group">
+      <input type="radio" class="btn-check" onclick="filterSelection('all')"name="options" id="option-1" autocomplete="off" checked />
+      <label class="btn btn-primary" for="option-1">Montrer Tout</label>
+      {% for category in category_list %}
+      <input type="radio" class="btn-check" name="options" id="option{{category.id}}" autocomplete="off" />
+      <label class="btn btn-primary" for="option{{category.id}}"onclick="filterSelection('{{category.name}}')">
+        {{category.name}}</label>
+      {% endfor %}
     </div>
+
     <div class="row row-cols-1 row-cols-md-3 g-4" id="item-container">
       {% for project in projects_list %}
       <div class="col filterDiv {{project.category.name}}">
@@ -99,8 +79,9 @@
             <div class="card-body">
               <h5 class="card-title">{{project.title}}</h5>
             </div>
-          </a>
+          </a>{% if project.subtitle %}
           <p class="card-text">{{project.subtitle}}</p>
+          {% endif %}
         </div>
       </div>
       {% endfor %}
@@ -109,6 +90,19 @@
   <!-- News Articles -->
   <section class="news-section" id="news">
     <h1>Presse</h1>
+    <section class="content">
+      <div class="item ratio ratio-16x9">
+        <iframe src="https://www.youtube.com/embed/vDsoO6e5ov0" title="Presse PGM" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
+      </div>
+      <div class="item ratio ratio-16x9">
+        <iframe src="https://www.youtube.com/embed/eQqWB3rWgDY" title="Presse TV"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
+      </div>
+    </section>
   </section>
 </main>
 {% endblock content %} {% block scripts %}

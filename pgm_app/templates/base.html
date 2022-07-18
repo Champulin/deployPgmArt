@@ -38,13 +38,13 @@
     href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap"
     rel="stylesheet"
     />
-    <!-- Styles -->
-    {% comment %} <link href="{% static 'core/css/styles.css'%}" rel="stylesheet" /> {% endcomment %}
-    <!-- MDB -->
     <link
     href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.3.0/mdb.min.css"
     rel="stylesheet"
     />
+    <!-- Styles -->
+    <link href="{% static 'core/css/base.css'%}" rel="stylesheet" />
+    <!-- MDB -->
     {% block styles %} {% endblock styles%}
   </head>
   <body id="page-top">
@@ -60,6 +60,7 @@
         alt="PGM Logo"
         loading="lazy"
       />
+      <small>Management culturel</small>
     </a>
     <!-- Toggle button -->
     <button
@@ -79,7 +80,7 @@
       <!-- Navbar brand -->
 
       <!-- Left links -->
-      <ul class="navbar-nav ma-auto mb-2 mb-lg-0">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
         <li class="nav-item">
           <a class="nav-link" href="{% url 'pgm_app:index'%}#page-top">Home</a>
         </li>
