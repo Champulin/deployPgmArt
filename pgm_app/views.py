@@ -8,7 +8,7 @@ class IndexListView(generic.ListView):
         return Project.objects.all().order_by('-date')
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['category_list'] = Category.objects.all().order_by('name')
+        context['category_list'] = Category.objects.all().order_by('id')
         return context
 
 class ProjectDetailView(generic.DetailView):
