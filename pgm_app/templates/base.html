@@ -1,156 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=yes"
-    />
-    <meta name="description" content="" />
-    <meta name="author" content="" />
-    <!-- Font Awesome icons (free version)-->
-    <script
-      src="https://use.fontawesome.com/releases/v6.1.0/js/all.js"
-      crossorigin="anonymous"
-    ></script>
-    <!-- Core theme CSS (includes Bootstrap)-->
-    {% load static %}
-    <title>{% block title %}PGM Art Productions{% endblock title%}</title>
-    <link
-    rel="icon"
-    type="image/x-icon"
-    href="{% static 'core/img/favicon.ico'%}"
-    />
-    {% comment %} fonts {% endcomment %}
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-    href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap"
-    rel="stylesheet"
-    />
-    <link
-    href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.3.0/mdb.min.css"
-    rel="stylesheet"
-    />
-    <!-- Styles -->
-    <link href="{% static 'core/css/base.css'%}" rel="stylesheet" />
-    <!-- MDB -->
-    {% block styles %} {% endblock styles%}
-  </head>
-  <body id="page-top">
-    <!-- Navigation-->
-    <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top" id="navbar">
-  <!-- Container wrapper -->
-  <div class="container-fluid">
-    <a class="navbar-brand mt-2 mt-lg-0" href="{% url 'pgm_app:index'%}#page-top">
-      <img
-        src="{% static 'core/img/favicon.ico'%}"
-        height="60"
-        alt="PGM Logo"
-        loading="lazy"
-      />
-      <small>PGM Art Production <br /> <p>Management culturel </p></small>
-    </a>
-    <!-- Toggle button -->
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-mdb-toggle="collapse"
-      data-mdb-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
-      <i class="fas fa-bars"></i>
-    </button>
 
-    <!-- Collapsible wrapper -->
-    <div class="collapse navbar-collapse" id="navigation">
-      <!-- Navbar brand -->
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <!-- Font Awesome icons (free version)-->
+  <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+  <!-- Core theme CSS (includes Bootstrap)-->
+  {% load static %}
+  <title>{% block title %}PGM Art Productions{% endblock title%}</title>
+  <link rel="icon" type="image/x-icon" href="{% static 'core/img/favicon.ico'%}" />
+  {% comment %} fonts {% endcomment %}
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.3.0/mdb.min.css" rel="stylesheet" />
+  <!-- Styles -->
+  <link href="{% static 'core/css/base.css'%}" rel="stylesheet" />
+  <!-- MDB -->
+  {% block styles %} {% endblock styles%}
+</head>
 
-      <!-- Left links -->
-      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'pgm_app:index'%}#page-top">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'pgm_app:index'%}#about"
-            >À propos de moi</a
-          >
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'pgm_app:index'%}#portfolio"
-            >Portefeuille </a
-          >
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'pgm_app:index'%}#news"
-            >Presse </a
-          >
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'pgm_app:index'%}#contact"
-            >Contact</a
-          >
-        </li>
-      </ul>
-      <!-- Left links -->
+<body id="page-top">
+  <!-- Navigation-->
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top" id="navbar">
+    <!-- Container wrapper -->
+    <div class="container-fluid">
+      <a class="navbar-brand mt-2 mt-lg-0" href="{% url 'pgm_app:index'%}#page-top">
+        <img src="{% static 'core/img/favicon.ico'%}" height="60" alt="PGM Logo" loading="lazy" />
+        <small>PGM Art Production <br />
+          <p>Management culturel </p>
+        </small>
+      </a>
+      <!-- Toggle button -->
+      <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <!-- Collapsible wrapper -->
+      <div class="collapse navbar-collapse" id="navigation">
+        <!-- Navbar brand -->
+
+        <!-- Left links -->
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'pgm_app:index'%}#page-top">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'pgm_app:index'%}#about">À propos de moi</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'pgm_app:index'%}#portfolio">Portefeuille </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'pgm_app:index'%}#news">Presse </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'pgm_app:index'%}#contact">Contact</a>
+          </li>
+        </ul>
+        <!-- Left links -->
+      </div>
+      <!-- Collapsible wrapper -->
+
+      <!-- Right elements -->
     </div>
-    <!-- Collapsible wrapper -->
+    <!-- Container wrapper -->
+  </nav>
 
-    <!-- Right elements -->
-  </div>
-  <!-- Container wrapper -->
-</nav>
+  {% block content %} {% endblock content%}
 
-    {% block content %} {% endblock content%}
+  <!-- Footer-->
+  <footer class="footer bg-dark small text-center text-white-50" id="contact">
+    <section class="socials">
+      <br />
+      <div class="contact-title">
+        <h1>Contact</h1>
+      </div>
+      <div class="container socials-container">
+        <a style="color: #3b5998" href="https://www.facebook.com/EscenicaTeatroMagico" role="button"><i
+            class="fab fa-facebook-f fa-lg"></i></a>
 
-    <!-- Footer-->
-    <footer class="footer bg-dark small text-center text-white-50" id="contact">
-      <section class="socials">
-        <br />
-        <div class="contact-title">
-          <h1>Contact</h1>
-        </div>
-        <div class="container socials-container">
-          <a style="color: #3b5998" href="https://www.facebook.com/EscenicaTeatroMagico" role="button"
-            ><i class="fab fa-facebook-f fa-lg"></i
-          ></a>
+        <!-- Instagram -->
+        <a style="color: #ac2bac" href="https://www.instagram.com/escenica_teatro/" role="button"><i
+            class="fab fa-instagram fa-lg"></i></a>
 
-          <!-- Instagram -->
-          <a style="color: #ac2bac" href="https://www.instagram.com/escenica_teatro/" role="button"
-            ><i class="fab fa-instagram fa-lg"></i
-          ></a>
+        <!-- Linked In -->
+        <a style="color: #0082ca" href="https://www.linkedin.com/in/paloma-gordián-montalva-b663603a/" role="button"><i
+            class="fab fa-linkedin-in fa-lg"></i></a>
+      </div>
+      <br />
+      <div class="email-container">
+        <i class="fas fa-envelope text-primary"> </i>
+        <span>zgp.production@gmail.com</span>
+      </div>
+      <div class="container px-4 px-lg-5">
+        Pgm Art Productions. <br />Web by Champulin
+        <!-- Linked In -->
+        <a style="color: #333333" href="https://github.com/Champulin/" role="button"><i
+            class="fab fa-github fa-lg"></i></a>
+      </div>
+    </section>
+  </footer>
+  <!-- MDB -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.3.0/mdb.min.js"></script>
+  {% block scripts %} {% endblock scripts%}
+</body>
 
-          <!-- Linked In -->
-          <a style="color: #0082ca" href="https://www.linkedin.com/in/paloma-gordián-montalva-b663603a/" role="button"
-            ><i class="fab fa-linkedin-in fa-lg"></i
-          ></a>
-        </div>
-        <br />
-        <div class="email-container">
-          <i class="fas fa-envelope text-primary"> </i>
-          <span>zgp.production@gmail.com</span>
-        </div>
-        <div class="container px-4 px-lg-5">
-          Pgm Art Productions. <br />Web by Champulin
-          <!-- Linked In -->
-          <a
-            style="color: #333333"
-            href="https://github.com/Champulin/"
-            role="button"
-            ><i class="fab fa-github fa-lg"></i
-          ></a>
-        </div>
-      </section>
-    </footer>
-    <!-- MDB -->
-<script
-type="text/javascript"
-src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.3.0/mdb.min.js"
-></script>
-    {% block scripts %} {% endblock scripts%}
-  </body>
 </html>

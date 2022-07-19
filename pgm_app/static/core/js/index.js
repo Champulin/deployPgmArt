@@ -1,4 +1,4 @@
-filterSelection("all")
+filterSelection("all");
 function filterSelection(c) {
   var x, i;
   x = document.getElementsByClassName("filterDiv");
@@ -22,7 +22,7 @@ function w3AddClass(element, name) {
   }
 }
 
- // Hide elements that are not selected
+// Hide elements that are not selected
 function w3RemoveClass(element, name) {
   var i, arr1, arr2;
   arr1 = element.className.split(" ");
@@ -33,4 +33,18 @@ function w3RemoveClass(element, name) {
     }
   }
   element.className = arr1.join(" ");
+}
+const buttons = document.getElementsByClassName("boton");
+
+function clean() {
+  for (const button of buttons) {
+    button.classList.remove("active");
+  }
+}
+
+for (const button of document.getElementsByClassName("boton")) {
+  button.addEventListener("click", () => {
+    clean(); // Remove active from all other buttons
+    button.classList.add("active"); // Set current one as active
+  });
 }

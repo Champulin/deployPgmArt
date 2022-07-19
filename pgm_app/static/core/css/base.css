@@ -1,36 +1,49 @@
-.socials email-container i{
+.socials email-container i {
     position: relative;
 }
-.socials-container{
+
+.socials-container {
     display: flex;
     justify-content: center;
     gap: 2rem;
 }
-h4{
+
+h4 {
     font-size: 2.2vw;
 }
-.container-fluid small{
+
+.container-fluid small {
     font-size: 1.2rem;
 }
-.container-fluid small p{
+
+.container-fluid small p {
     font-size: 0.7rem;
 }
-#navbar{
+
+#navbar {
     padding: 0px;
 }
+
 #navbar small {
     margin-top: 1rem;
 }
-h1{
+
+h1 {
     font-size: calc(1.375rem + 1.1vw);
 }
-#navigation ul li a:active{ color: aliceblue; }
-#navigation .bg-dark{
+
+#navigation ul li a:active {
+    color: aliceblue;
+}
+
+#navigation .bg-dark {
     --mdb-bg-opacity: 0.7
 }
-#naviaiton .bg-dark:hover{
+
+#naviaiton .bg-dark:hover {
     --mdb-bg-opacity: 1
 }
-#navigation img{
+
+#navigation img {
     height: 40px;
 }

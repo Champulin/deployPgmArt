@@ -64,10 +64,11 @@
     <br /> <br />
     <!-- Control buttons -->
     <div class="btn-toolbar btn-toolbar-sm flex-wrap" role="toolbar" aria-label="Basic example" id="myBtnContainer">
-      <button type="button" class="btn btn-outline-primary" onclick="filterSelection('all')" checked>Montrer
+      <button type="button" class="btn btn-outline-primary boton active " onclick="filterSelection('all')"
+        checked>Montrer
         Tout</button>
       {% for category in category_list %}
-      <button type="button" class="btn btn-outline-primary" onclick="filterSelection('{{category.id}}')">
+      <button type="button" class="btn btn-outline-primary boton " onclick="filterSelection('{{category.id}}')">
         {{category.name}}</button>
       {% endfor %}
     </div>

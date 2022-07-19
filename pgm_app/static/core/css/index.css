@@ -20,9 +20,20 @@
   border-color: rgb(77, 176, 183);
 }
 
+.btn.btn-outline-primary.active {
+  color: rgb(17, 6, 6);
+  background-color: rgb(77, 176, 183);
+  border-color: black;
+}
+
+/* button[checked] {
+  color: rgb(17, 6, 6);
+  background-color: rgb(77, 176, 183)!important;
+} */
 .btn-outline-primary:focus {
   color: rgb(17, 6, 6);
   background-color: rgb(77, 176, 183);
+  border-color: black;
 }
 
 .btn-outline-primary:hover {
@@ -55,10 +66,12 @@ h2 {
   margin-top: 3rem;
   margin-bottom: 4rem;
 }
-.hero-pic{
+
+.hero-pic {
   max-width: 85%;
-  margin:auto;
+  margin: auto;
 }
+
 .filterDiv {
   float: left;
   color: rgb(11, 15, 19);
