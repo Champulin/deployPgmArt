@@ -19,3 +19,6 @@ h1{
 .bg-dark:hover{
     --mdb-bg-opacity: 1
 }
+#navigation img{
+    height: 40px;
+}
