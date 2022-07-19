@@ -87,7 +87,7 @@ p {
   p {
     font-size: 14px;
   }
-  .item-container img {
+  .img-fluid {
     height: 290px;
     margin-left: 1rem;
   }
