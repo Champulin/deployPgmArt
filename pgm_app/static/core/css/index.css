@@ -6,128 +6,158 @@
 
 /* Height for devices larger than 992px */
 @media (min-width: 992px) {
-  #hero-bg  {
+  #hero-bg {
     height: 700px;
   }
 }
-#about p{
+
+#about p {
   margin-top: 1rem;
 }
+
 .btn {
-  color:rgb(77, 176, 183) ;
-  border-color: rgb(77, 176, 183) ;
+  color: rgb(77, 176, 183);
+  border-color: rgb(77, 176, 183);
 }
-.btn-outline-primary:focus{
+
+.btn-outline-primary:focus {
   color: rgb(17, 6, 6);
-  background-color:rgb(77, 176, 183);
+  background-color: rgb(77, 176, 183);
 }
-.btn-outline-primary:hover{
+
+.btn-outline-primary:hover {
   color: rgb(17, 6, 6);
-  background-color:rgb(77, 176, 183);
-}
-h1{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    margin-top: 2rem;
-    text-align: center;
-
-}
-#mainNav{
-z-index: 2;
+  background-color: rgb(77, 176, 183);
 }
 
-#about{
-    background-color: #0a0303;
+h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+  text-align: center;
+
 }
 
-#about p{
-    white-space: normal;
-    color:aliceblue;
-    text-align: justify;
+h2 {
+  margin-top: 4rem;
 }
 
-  .filterDiv {
-    float: left;
-    color: rgb(11, 15, 19);
-    width: 100%;
-    text-align: center;
-    margin: 2px;
-    display: none; /* Hidden by default */
-    padding: 0;
+
+#about {
+  background-color: #0a0303;
+}
+
+#about p {
+  white-space: normal;
+  color: aliceblue;
+  text-align: justify;
+  margin-top: 3rem;
+}
+.hero-pic{
+  max-width: 85%;
+  margin:auto;
+}
+.filterDiv {
+  float: left;
+  color: rgb(11, 15, 19);
+  width: 100%;
+  text-align: center;
+  margin: 2px;
+  display: none;
+  /* Hidden by default */
+  padding: 0;
+}
+
+.filterDiv img {
+  width: 330px;
+  height: 360px;
+  -o-object-fit: cover;
+  object-fit: cover;
+  aspect-ratio: 4/3;
+}
+
+/* The "show" class is added to the filtered elements */
+.show {
+  display: block;
+}
+
+#item-container {
+  margin: auto;
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 3rem 2rem;
+  cursor: pointer;
+}
+
+#myBtnContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#news .content {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 8px;
+}
+
+.btn-toolbar {
+  font-size: 1.9vw;
+}
+
+.btn-group,
+.btn-group-vertical {
+  box-shadow: none;
+}
+
+.contact-section .container {
+  display: flex;
+  justify-content: center;
+}
+
+.card {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.card a {
+  text-decoration: none;
+}
+
+@media (min-width: 1px) and (max-width: 767px) {
+  #item-container {
+    grid-template-columns: 1fr;
+    gap: 0rem;
   }
-  .filterDiv img{
-    width: 330px;
-    height: 360px;
-    object-fit: cover;
-    aspect-ratio: 4/3;
+
+  #about p {
+    font-size: 2.3vw;
   }
-  /* The "show" class is added to the filtered elements */
+
+
+
   .show {
-    display: block;
-  }
-  #item-container{
-    margin:auto;
-    display: grid;
-    align-items: center;
-    grid-template-columns:  1fr 1fr 1fr 1fr;
-    gap: 3rem 2rem;
-    cursor: pointer;
-  }
-  #myBtnContainer{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  #news .content{
-    display:flex;
-    justify-content: space-between;
-    gap: 1rem;
-    padding: 8px;
-  }
-  .btn-toolbar{
-    font-size: 1.9vw;
-  } 
-  .btn-group, .btn-group-vertical{
-    box-shadow: none;
-  }
-  .contact-section .container{
     display: flex;
     justify-content: center;
   }
-  .card{
-    width: fit-content;
-  }
-  .card a{
-    text-decoration: none;
-  }
-  @media (min-width: 1px) and (max-width: 767px){
-    #item-container {
-      grid-template-columns: 1fr;
-      gap: 0rem;
-    }
 
-    #about p{
-      font-size: 2.3vw;
-    }
-    .navbar-brand{
-      font-size: 4vw;
-    }
-    .show{
-      display: flex;
-      justify-content: center;
-    }
-    #news .content{
-      display:grid;
-      grid-template-columns: 1fr;
-    }
+  #news .content {
+    display: grid;
+    grid-template-columns: 1fr;
   }
-  @media (min-width: 768px) and (max-width: 1024px) { 
-    #item-container {
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  #item-container {
     grid-template-columns: 1fr 1fr;
   }
-  #news .content{
-    display:grid;
+
+  #news .content {
+    display: grid;
     grid-template-columns: 1fr;
   }
 }

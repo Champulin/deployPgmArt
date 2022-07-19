@@ -14,8 +14,8 @@ h2{
 }
 p {
   font-weight: 600;
-
-  font-size: 22px;
+  margin-top: 2rem;
+  font-size: 1.5vw;
 
 }
 .project-detail-body{
@@ -75,47 +75,25 @@ p {
   content: "-";
 }
 @media (min-width: 1px) and (max-width: 767px) {
-body {
-  padding: 0.5rem;
-}
-h1{
-  font-size: 3rem;
-}
-h2{
-  font-size: 1.5rem;
-}
-p {
-  font-size: 14px;
-}
-#video-player{
-  @supports not (aspect-ratio: 16 / 9) {
-  &::before {
-    float: left;
-    padding-top: 56.25%;
-    content: "";
+  body {
+    padding: 0.5rem;
   }
-  &::after {
-    display: block;
-    content: "";
-    clear: both;
+  h1{
+    font-size: 3rem;
   }
-} 
-}
-#item-container img{ 
-    aspect-ratio: 16/9;
-    @supports not (aspect-ratio: 16 / 9) {
-    &::before {
-      float: left;
-      padding-top: 56.25%;
-      content: "";
-    }
-    &::after {
-      display: block;
-      content: "";
-      clear: both;
-    }
-  } 
-}
+  h2{
+    font-size: 1.5rem;
+  }
+  p {
+    font-size: 14px;
+  }
+  img{
+    height: 290px;
+    margin-left: 1rem;
+  }
+  .video-container{
+    margin-left:1.7rem;
+  }
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {

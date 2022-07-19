@@ -58,7 +58,9 @@
   </section>
   <!-- Projects -->
   <section class="portfolio-section" id="portfolio">
+    <br /> <br />
     <h1>Portefeuille</h1>
+    <br /> <br />
     <!-- Control buttons -->
     <div class="btn-toolbar btn-toolbar-sm flex-wrap" role="toolbar" aria-label="Basic example" id="myBtnContainer">
       <button type="button" class="btn btn-outline-primary" onclick="filterSelection('all')" checked>Montrer
@@ -68,6 +70,7 @@
         {{category.name}}</button>
       {% endfor %}
     </div>
+    <br /> <br />
     <div class="row row-cols-1 row-cols-md-3 g-4" id="item-container">
       {% for project in projects_list %}
       <div class="col filterDiv {{project.category.id}}">
@@ -87,7 +90,9 @@
   </section>
   <!-- News Articles -->
   <section class="news-section" id="news">
+    <br /> <br />
     <h1>Presse</h1>
+    <br /> <br />
     <section class="content">
       <div class="item ratio ratio-16x9">
         <iframe src="https://www.youtube.com/embed/vDsoO6e5ov0" title="Presse PGM" frameborder="0"
