@@ -4,11 +4,7 @@
 <main>
   <header>
     <!-- Background image -->
-    <div
-      id="hero-bg"
-      class="p-5 text-center bg-image"
-      style="background-image: url({%static'core/img/home.jpg'%})"
-    >
+    <div id="hero-bg" class="p-5 text-center bg-image" style="background-image: url({%static'core/img/home.jpg'%})">
       <div class="mask" style="background-color: rgba(0, 0, 0, 0.6)">
         <div class="d-flex justify-content-center align-items-center h-100">
           <div class="text-white">
@@ -31,11 +27,7 @@
           <h2 class="text-white mb-4">À propos de moi</h2>
           <br /><br />
           <div class="hero-pic">
-            <img
-              src="{% static 'core/img/about_pic.jpg' %}"
-              class="img-fluid"
-              alt=""
-            />
+            <img src="{% static 'core/img/about_pic.jpg' %}" class="img-fluid" alt="" />
           </div>
           <p>
             Je m'appelle Paloma Gordián Montalva, je suis communicatrice
@@ -77,26 +69,12 @@
     <br />
     <br />
     <!-- Control buttons -->
-    <div
-      class="btn-toolbar btn-toolbar-sm flex-wrap"
-      role="toolbar"
-      aria-label="Basic example"
-      id="myBtnContainer"
-    >
-      <button
-        type="button"
-        class="btn btn-outline-primary boton active"
-        onclick="filterSelection('all')"
-        checked
-      >
+    <div class="btn-toolbar btn-toolbar-sm flex-wrap" role="toolbar" aria-label="Basic example" id="myBtnContainer">
+      <button type="button" class="btn btn-outline-primary boton active" onclick="filterSelection('all')" checked>
         Montrer Tout
       </button>
       {% for category in category_list %}
-      <button
-        type="button"
-        class="btn btn-outline-primary boton"
-        onclick="filterSelection('{{category.id}}')"
-      >
+      <button type="button" class="btn btn-outline-primary boton" onclick="filterSelection('{{category.id}}')">
         {{category.name}}
       </button>
       {% endfor %}
@@ -128,22 +106,14 @@
     <br />
     <section class="content">
       <div class="item ratio ratio-16x9">
-        <iframe
-          src="https://www.youtube.com/embed/uLY1t5s8l7g"
-          title="Papelucho historiador"
-          frameborder="0"
+        <iframe src="https://www.youtube.com/embed/uLY1t5s8l7g" title="Papelucho historiador" frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-        ></iframe>
+          allowfullscreen></iframe>
       </div>
       <div class="item ratio ratio-16x9">
-        <iframe
-          src="https://www.youtube.com/embed/NZFSBkMKeDI"
-          title="Scrouge"
-          frameborder="0"
+        <iframe src="https://www.youtube.com/embed/NZFSBkMKeDI" title="Scrouge" frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-        ></iframe>
+          allowfullscreen></iframe>
       </div>
     </section>
   </section>
